@@ -2,11 +2,9 @@ SHELL = /bin/sh
 
 .PHONY: clobber docfiles
 
-CODEPLUGDIR = github.com/dalefarnsworth/codeplug
-SRCDIR = $(GOPATH)/src/$(CODEPLUGDIR)/docCodeplug
-JSONFILE = $(GOPATH)/src/$(CODEPLUGDIR)/codeplug/codeplugs.json
+JSONFILE = ../codeplug/codeplugs.json
 BINDIR = $(GOPATH)/bin
-SOURCES = $(SRCDIR)/*.go
+SOURCES = *.go
 
 docfiles: $(BINDIR)/docCodeplug $(JSONFILE)
 	$(BINDIR)/docCodeplug $(JSONFILE)
